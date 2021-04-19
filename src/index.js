@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import Counter from "./Counter";
 
 ReactDOM.render(
-  /*<React.StrictMode>
+  <React.StrictMode>
     <App />
-  </React.StrictMode>,*/
-    <Counter />,
+  </React.StrictMode>,
+    //<Counter />,
   document.getElementById('root')
 );
 
