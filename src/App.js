@@ -94,26 +94,12 @@ function App() {
        nextId.current += 1;
     }, [username, email]);
 
-    const onToggle = useCallback(id => {
-        dispatch({
-            type: 'TOGGLE_USER',
-            id
-        });
-    }, []);
-
-    const onRemove = useCallback(id => {
-        dispatch({
-            type:'REMOVE_USER',
-            id
-        });
-    }, []);
-
     const count = useMemo(() => countActiveUsers(users), [users]);
 
     return (
         <UserDispatch.Provider value={dispatch}>
             <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate} />
-            <UserList users={users} onToggle={onToggle} onRemove={onRemove} />
+            <UserList users={users} />
             <div>활성사용자 수 : {count}</div>
         </UserDispatch.Provider>
     );
