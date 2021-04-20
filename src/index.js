@@ -7,11 +7,11 @@ import Counter from "./Counter";
 import ContextSample from "./ContextSample";
 
 ReactDOM.render(
-  /*<React.StrictMode>
+  <React.StrictMode>
     <App />
-  </React.StrictMode>,*/
+  </React.StrictMode>,
     //<Counter />,
-    <ContextSample />,
+    //<ContextSample />,
   document.getElementById('root')
 );
 
