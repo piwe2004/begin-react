@@ -1,6 +1,7 @@
 import React, { useRef, useReducer, useState, useMemo, useCallback } from 'react';
 import UserList from "./UserList";
 import CreateUser from "./CreateUser";
+import useInputs from "./Hooks/useInputs";
 
 
 function countActiveUsers(users){
@@ -74,15 +75,10 @@ function App() {
     const nextId = useRef(4);
 
     const {users} = state;
-    const { username, email } = state.inputs;
-    const onChange = useCallback( e => {
-        const {name, value} = e.target;
-        dispatch({
-            type:'CHANGE_INPUT',
-            name,
-            value
-        });
-    }, []);
+    const [{ username, email }, onChange, reset] = useInputs({
+        username: '',
+        email: ''
+    });
 
     const onCreate = useCallback(() => {
        dispatch({
